@@ -1,0 +1,245 @@
+* {
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.GetCustomers {
+  display: flex;
+  flex-direction: column;
+  width: 30rem auto;
+  margin: 5rem auto
+}  
+
+.GetCustomers-button{
+  padding: 2rem;
+  cursor: pointer;
+  background-color: #0b5468;
+  font-weight: 700;
+  color: white;
+  border: non
+}
+
+.AddCustomer{
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  margin: 5rem auto;
+  max-width: 90%;
+}
+
+.AddCustomer-input{
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.3rem 0rem
+}
+
+.AddCustomer-btn{
+  padding: 8px 20px;
+  margin: 3px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #000;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.AddCustomer-btn:hover{
+  padding: 6px 18px;
+  transition: all 0.3s ease-out;
+  background-color: #156383;
+}
+
+.Edit-btn{
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-style: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.errorMessage{
+  color: red;
+  font-size: 12px;
+}
+
+.NavigationBar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.NavigationBar-link{
+  background-color: #0b5468;
+  text-transform: capitalize;
+  color: white;
+  font-size: medium;
+  text-decoration: none;
+  min-width: 150px;
+  min-height: 30px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 24px;
+}
+
+.homepage{
+  text-align: center;
+  font-weight: 700;
+  padding-top: 100px;
+}
+
+.Invoice{
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  margin: 5rem auto;
+  max-width: 90%;
+}
+
+.customerList{
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  margin: 5rem auto;
+  max-width: 90%;
+}
+
+.Invoice-input{
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.3rem 0rem
+}
+
+.Invoice-date{
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.3rem 0rem
+}
+
+.Invoice-date .date-tooltip{
+  visibility: hidden;
+  width: 120px;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.Invoice-date:hover .date-tooltip{
+  visibility: visible;
+}
+
+.Invoice-checkbox{
+  padding: 1.5rem;
+  padding-left: 1.5rem;
+  width: 20px;
+  height: 20px;
+  border-style: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.Invoice-select{
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.3rem 0rem
+}
+
+.filter{
+  font-size: large;
+}
+
+.prevButton, .nextButton, .updateButton, .savePDF-Button{
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #000;
+  display: inline-block;
+}
+
+.Invoice-btn:hover{
+  padding: 6px 18px;
+  transition: all 0.3s ease-out;
+  background-color: #156383;
+  display: inline-block;
+}
+
+.customerDiv{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  font-size: large;
+  padding: 4px 10px;
+}
+
+.editButton, .selectButton{
+  display: inline-block;
+  color: #fff;
+  background-color: #000;
+  margin: 5px;
+  font-size:large;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.customerDiv:focus-within {
+  background-color: #156383;
+  color: #fff
+}
+
+.lineInfo-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.3rem 0rem;
+  width: 100%;
+}
+
+.lineInfo-price {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.3rem 0rem;
+  width: 25%;
+}
+
+.lineInfo-label{
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
+
+.errorResponseMessage {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+}
+
+.responseMessage {
+  color: green;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+}

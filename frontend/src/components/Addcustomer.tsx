@@ -43,16 +43,9 @@ const Addcustomer = () => {
         return true;
     };
     
-    const handleClick = async() =>{
-            const get = await(await fetch(`https://3dwebtesti.azurewebsites.net/api/HttpTrigger1`, {
-                headers : { 
-                  'Content-Type': 'application/json',
-                  'Accept': 'application/json'
-                 }
-          
-              })
-              .then((response) => response.json())
-              .then((messages) => {console.log("messages");}));
+    const handleClick = () =>{
+            fetch(`https://3dwebtesti.azurewebsites.net/api/HttpTrigger1`, {mode:'no-cors'});
+            console.log();
                 
     };
 

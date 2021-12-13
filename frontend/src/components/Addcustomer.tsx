@@ -15,16 +15,6 @@ const Addcustomer = () => {
         YTunnusError: "",
         NimiError: ""
     })
-    const [token, setToken] = useState('');
-
-    useEffect ( () => {
-        let currentUser = localStorage.getItem('currentUser');
-        console.log("current user: " + currentUser)
-        if (currentUser) {            
-            let obj = JSON.parse(currentUser!);
-            setToken(obj.token);
-        }
-    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInput({
@@ -53,40 +43,17 @@ const Addcustomer = () => {
         return true;
     };
     
-    const handleClick = (): void =>{
-        const isValid = validate();
-        if (isValid){
-            fetch(`${configData.API_URL}:${configData.API_PORT}/customer`, {
-                method: 'POST',
-                headers: { 'Content-type': 'application/json',
-                'x-access-token': token
-                },
-                body: JSON.stringify({
-                    YTunnus: input.YTunnus,
-                    asiakkaanNimi: input.asiakkaanNimi,
-                    Postitusosoite: input.Postitusosoite,
-                    Postinumero: input.Postinumero,
-                    Toimipaikka: input.Toimipaikka
-                })
-            })
-            .then(function(data){
-                console.log("Request succeeded with response ", data);
-                setMessage('Asiakas lisätty onnistuneesti');
-                setBoolean(true);          
-            })
-            .catch(function(error){
-                console.log("Request failed ", error);
-                setBoolean(false)
-                setMessage('Laskun tallentaminen epäonnistui');
-            })
-            setInput({
-                YTunnus: "",
-                asiakkaanNimi: "",
-                Postitusosoite: "",
-                Postinumero: "",
-                Toimipaikka: ""
-            })
-        }        
+    const handleClick = async() =>{
+            const get = await(await fetch(`https://3dwebtesti.azurewebsites.net/api/HttpTrigger1`, {
+                headers : { 
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                 }
+          
+              })
+              .then((response) => response.json())
+              .then((messages) => {console.log("messages");}));
+                
     };
 
     return(

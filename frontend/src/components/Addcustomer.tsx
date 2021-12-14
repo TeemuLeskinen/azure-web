@@ -42,15 +42,37 @@ const Addcustomer = () => {
 
         return true;
     };
-    
-    const handleClick = async () =>{
-            const response = await fetch(`https://3dwebtesti.azurewebsites.net/api/HttpTrigger1`, {
-                method:'GET'
-            });
-            const data = await response.json();
-            console.log(data);
-                
+    //https://3dwebtesti.azurewebsites.net/api/HttpTrigger1
+    //const response = await fetch('https://3dwebtesti.azurewebsites.net/api/AddCustomer?', {
+    //            method: 'POST',
+    //            mode: 'no-cors'
+    //        });
+    const handleClick = () =>{
+        fetch(`https://3dwebtesti.azurewebsites.net/api/AddCustomer?`, {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                YTunnus: input.YTunnus,
+                asiakkaanNimi: input.asiakkaanNimi,
+                Postitusosoite: input.Postitusosoite,
+                Postinumero: input.Postinumero,
+                Toimipaikka: input.Toimipaikka
+            })
+        })
+        .then(function(data){
+            console.log("Request succeeded with response ", data);
+            setMessage('Asiakas lisätty onnistuneesti');
+            setBoolean(true);          
+        })
+        .catch(function(error){
+            console.log("Request failed ", error);
+            setBoolean(false)
+            setMessage('Laskun tallentaminen epäonnistui');
+        })                
     };
+
+    
 
     return(
         <div className="AddCustomer">

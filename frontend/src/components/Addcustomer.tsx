@@ -47,9 +47,11 @@ const Addcustomer = () => {
     //            method: 'POST',
     //            mode: 'no-cors'
     //        });
+    //https://3dwebtesti.azurewebsites.net/api/AddCustomer?
     const handleClick = () =>{
-        fetch(`https://3dwebtesti.azurewebsites.net/api/AddCustomer?`, {
+        fetch(`/api/add-customer`, {
             method: 'POST',
+            mode:'no-cors',
             headers: { 'Content-type': 'application/json',
             },
             body: JSON.stringify({

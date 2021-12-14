@@ -17,18 +17,18 @@ function Customerlist() {
     const [counter, setCounter]:any = React.useState(0);
     const [customers, setCustomers] = React.useState<Customer[]>([]);
     const [input, setinput] = React.useState(""); 
-    const [token, setToken] = React.useState('');
+    //const [token, setToken] = React.useState('');
 
-    let currentUser = localStorage.getItem('currentUser');
+    //let currentUser = localStorage.getItem('currentUser');
 
 
     const getData = async () => {
         try {
-            const response = await fetch(`${configData.API_URL}:${configData.API_PORT}/customers`, {
+            const response = await fetch('https://apifunktiot.azurewebsites.net/api/getCustomers?', {
                 method: 'GET',
-                headers: { 'Content-type': 'application/json',
-                            'x-access-token' : JSON.parse(currentUser!).token}
+                headers: { 'Content-type': 'application/json' }
             });
+
             const data = await response.json();
             if(response.ok){
                 setTotal(data.length);
@@ -43,9 +43,9 @@ function Customerlist() {
 
     }
     React.useEffect(()=> {
-        if (currentUser) {            
-            setToken(JSON.parse(currentUser!).token);
-        }
+        //if (currentUser) {            
+        //    setToken(JSON.parse(currentUser!).token);
+        //}
         getData();
     }, []);
 

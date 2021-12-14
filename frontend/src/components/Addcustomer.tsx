@@ -42,16 +42,12 @@ const Addcustomer = () => {
 
         return true;
     };
-    //https://3dwebtesti.azurewebsites.net/api/HttpTrigger1
-    //const response = await fetch('https://3dwebtesti.azurewebsites.net/api/AddCustomer?', {
-    //            method: 'POST',
-    //            mode: 'no-cors'
-    //        });
-    //https://3dwebtesti.azurewebsites.net/api/AddCustomer?
+
+    //mode:'no-cors',
     const handleClick = () =>{
-        fetch(`/api/add-customer`, {
+        fetch(`https://apifunktiot.azurewebsites.net/api/addCustomer`, {
             method: 'POST',
-            mode:'no-cors',
+            
             headers: { 'Content-type': 'application/json',
             },
             body: JSON.stringify({

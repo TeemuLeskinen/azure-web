@@ -2,6 +2,9 @@
   "IsEncrypted": false,
   "Values": {
     "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "node"
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "TenantId": "eb70089c-2f68-43d2-8b91-bd1e9a11d579",
+    "ClientId": "9e540d7f-7b12-4ddb-867e-5192fa826380",
+    "ClientSecret": "DRZ7Q~3RttWVSVAVR5ks2YQL_C9NbbR3JKbAL"
   }
 }

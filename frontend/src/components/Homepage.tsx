@@ -8,6 +8,7 @@ const Homepage: React.FunctionComponent = () => {
             <h1>Tervetuloa{CurrentUser}</h1>
             <h3>
             </h3>
+            <a href="/.auth/login/aad">Login</a>
         </div>
     )
 };
